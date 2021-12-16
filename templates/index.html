@@ -1,0 +1,78 @@
+<html>
+<head>
+<style>
+.button {
+background-color: #3b423c;
+	border: 2px solid #020353;
+	color: whitesmoke;
+	padding: 0.5em 0.5em;
+	text-align: center;
+
+
+	text-decoration: none;
+	font-size: 1em;
+	display: inline-block;
+	width: 18%;
+	border-radius: 5px;
+	box-shadow: 3px 3px 8px 0 rgb(66, 37, 37); 
+}
+body {
+  background-image: url("{{url_for('static', filename='background.jpg')}}");
+  background-repeat: no-repeat;
+ background-size: 100% 100%;
+}
+h1{
+   background-color: rgb(80, 87, 80);
+  color: white;
+}
+h3{
+   background-color: rgb(73, 82, 73);
+  color: white;
+}
+
+
+</style>
+</head>
+<body style="background-color:#808080;">
+
+  <center>
+
+<h1>BigMart Sales Prediction</h1>
+<pre>
+<form action="{{ url_for('predict')}}"method="post">
+<input type='text' name="area" placeholder="Item_Weight" required="required"/>
+<input type='text' name="area1" placeholder="Item_Fat_Content" required="required"/>
+<input type='text' name="area2" placeholder="Item_Visibility" required="required"/>
+<input type='text' name="area3" placeholder="Item_Type" required="required"/>
+<input type='text' name="area4" placeholder="Item_MRP" required="required"/>
+<input type='text' name="area5" placeholder="Outlet_Size" required="required"/>
+<input type='text' name="area6" placeholder="Outlet_Location_Type" required="required"/>
+<input type='text' name="area7" placeholder="Years_Established" required="required"/>
+<input type='text' name="area8" placeholder="Supermarket Type 1" required="required"/>
+<input type='text' name="area9" placeholder="Supermarket Type 2" required="required"/>
+<input type='text' name="area10" placeholder="Supermarket Type 3" required="required"/>
+
+<button type="submit" class="button">Predict Price</button>
+</form>
+<textarea>
+{{prediction_text}}
+</textarea>
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</center>
+<h2>About Us:</h2>
+
+<button onclick="document.location='https://www.linkedin.com/in/the-shubham-bhatt'">Linked_IN</button>
+<button onclick="document.location='https://github.com/shubhambhatt623/'">Github</button>
+</body>
+</html>
